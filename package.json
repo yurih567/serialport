@@ -1,5 +1,5 @@
 {
-  "name": "serialport-monorepo",
+  "name": "serialport",
   "private": true,
   "version": "0.0.0",
   "description": "Node.js packages to access serial ports, process data from them and speak many protocols",
@@ -17,6 +17,7 @@
     "test:arduino": "TEST_PORT=$(./bin/find-arduino.ts) npm test",
     "test:watch": "mocha -w",
     "test": "nyc --reporter lcov --reporter text mocha",
+    "prebuild": "lerna run --stream prebuild",
     "typecheck": "lerna exec tsc"
   },
   "repository": {

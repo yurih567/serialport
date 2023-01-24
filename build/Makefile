@@ -309,7 +309,7 @@ endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /home/yuri/.nvm/versions/node/v14.21.2/lib/node_modules/prebuild/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/tmp/prebuild/node/14.21.2" "-Dnode_gyp_dir=/home/yuri/.nvm/versions/node/v14.21.2/lib/node_modules/prebuild/node_modules/node-gyp" "-Dnode_lib_file=/tmp/prebuild/node/14.21.2/<(target_arch)/node.lib" "-Dmodule_root_dir=/home/yuri/Documents/Development/Lite/SerialPort.Lite.GrandChef" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/home/yuri/Documents/Development/Lite/SerialPort.Lite.GrandChef/build/config.gypi -I/home/yuri/.nvm/versions/node/v14.21.2/lib/node_modules/prebuild/node_modules/node-gyp/addon.gypi -I/tmp/prebuild/node/14.21.2/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/binding.gyp $(srcdir)/../../../../../../tmp/prebuild/node/14.21.2/include/node/common.gypi $(srcdir)/../../../../.nvm/versions/node/v14.21.2/lib/node_modules/prebuild/node_modules/node-gyp/addon.gypi $(srcdir)/build/config.gypi
+Makefile: $(srcdir)/../../../../../../tmp/prebuild/node/14.21.2/include/node/common.gypi $(srcdir)/binding.gyp $(srcdir)/build/config.gypi $(srcdir)/../../../../.nvm/versions/node/v14.21.2/lib/node_modules/prebuild/node_modules/node-gyp/addon.gypi
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included
