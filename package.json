@@ -1,0 +1,66 @@
+{
+  "name": "serialport-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Node.js packages to access serial ports, process data from them and speak many protocols",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "lerna run build",
+    "format": "npx prettier --write . && eslint packages test --fix",
+    "lint": "eslint packages test && npx prettier --check .",
+    "outdated": "lerna exec --no-bail npm outdated && npm outdated",
+    "postinstall": "lerna bootstrap --no-ci",
+    "publish": "lerna publish --exact",
+    "test:arduino": "TEST_PORT=$(./bin/find-arduino.ts) npm test",
+    "test:watch": "mocha -w",
+    "test": "nyc --reporter lcov --reporter text mocha",
+    "typecheck": "lerna exec tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/serialport/node-serialport.git"
+  },
+  "devDependencies": {
+    "@serialport/bindings-cpp": "10.8.0",
+    "@tsconfig/node12": "^1.0.9",
+    "@types/chai": "4.3.4",
+    "@types/chai-subset": "^1.3.3",
+    "@types/debug": "^4.1.7",
+    "@types/mocha": "10.0.0",
+    "@types/node": "^17.0.10",
+    "@types/sinon": "10.0.13",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0",
+    "chai": "^4.3.4",
+    "chai-subset": "^1.6.0",
+    "esbuild": "0.15.14",
+    "esbuild-register": "3.4.1",
+    "eslint": "8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-mocha": "10.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "6.1.1",
+    "lerna": "^4.0.0",
+    "lerna-changelog": "^2.2.0",
+    "mocha": "10.1.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.4.1",
+    "proxyquire": "^2.1.3",
+    "sinon": "14.0.2",
+    "typescript": "4.9.3"
+  },
+  "funding": "https://opencollective.com/serialport/donate",
+  "changelog": {
+    "labels": {
+      "breaking": ":boom: BREAKING CHANGES :boom:",
+      "feature-request": "Features",
+      "bug": "Bug Fixes",
+      "docs": "Documentation",
+      "internal": "Chores"
+    }
+  }
+}

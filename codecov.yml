@@ -1,0 +1,8 @@
+comment: false
+parsers:
+  javascript:
+    enable_partials: yes
+coverage:
+  status:
+    patch: false
+require_ci_to_pass: true
